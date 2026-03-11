@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TM Library</title>
+    <link rel="stylesheet/less" type="text/css" href="./styles/styles.less" />
+    <link rel="stylesheet/less" type="text/css" href="./styles/style_cards.less" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
+
+    <script src="https://cdn.jsdelivr.net/npm/less" ></script>
+    <!--     Toggle Menu V -->
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            const menuToggle = document.querySelector('.menu-toggle');
+            
+            navLinks.classList.toggle('open');
+            
+            const isOpen = navLinks.classList.contains('open');
+            menuToggle.setAttribute('aria-expanded', isOpen);
+            
+            menuToggle.innerHTML = isOpen ? '✕' : '☰';
+        }
+    </script>
+</head>
+<body>
+  <header>
+    <div class="container">
+        <nav>
+
+            <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="favorite.html" class="active">Favorite</a></li>
+                <li><a href="recommendations.html">Recommendations</a></li>
+            </ul>
+        </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container-Favs">
+        <div class="Authors">
+            <div class="Header">
+                <h1><i class="fas fa-book"></i> Authors</h1>
+            </div>
+
+            
+            <div class="author-cards">
+                <!-- Patrica Briggs -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="./assets/Patricia_Briggs.png" alt="Patrica Briggs" class="card-img" />
+                            <h3 class="Auth_Name">Patrica Briggs</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3 class="Auth_Name">Patrica Briggs</h3>
+                            <h4 class="Auth_Genre">Urban Fantasy</h4>
+                            <p class="Auth_Bio">Patricia Briggs (born 1965 in Butte, Montana) is an American fantasy author best known for her urban fantasy series about coyote‑shifter and Volkswagen mechanic Mercy Thompson. She began publishing traditional fantasy in 1993 with Masques before shifting to urban fantasy in 2006 with Moon Called, which launched the Mercy Thompson books and became a bestseller. Her work now includes multiple series, graphic novels, and over twenty novels, and she lives in Washington State with her family and a small herd of horses, writing full time.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ilona Andrews -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="./assets/Ilona_Andrews.jpg" alt="Ilona Andrews" class="card-img" />
+                            <h3 class="Auth_Name">Ilona Andrews</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3 class="Auth_Name">Ilona Andrews</h3>
+                            <h4 class="Auth_Genre">Urban Fantasy</h4>
+                            <p class="Auth_Bio">Ilona Andrews is the pseudonym for husband-and-wife writing team Ilona Gordon (native-born Russian) and Andrew "Gordon" Gordon (former U.S. Army communications sergeant). They met in college English class (Ilona got the better grade), married in 1995, and live in Texas with their two children, dogs, and cats. Debuting with Magic Bites (Kate Daniels #1, 2007), they've written 40+ novels across urban fantasy, paranormal romance, and sci-fi, including NYT #1 bestsellers like Hidden Legacy.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rick Riordan -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="./assets/Rick_Riordan.jpg" alt="Rick Riordan" class="card-img" />
+                            <h3 class="Auth_Name">Rick Riordan</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3 class="Auth_Name">Rick Riordan</h3>
+                            <h4 class="Auth_Genre">Mythological Fantasy</h4>
+                            <p class="Auth_Bio">Rick Riordan (b. 1964, San Antonio, TX) is #1 NYT bestselling author of Percy Jackson & the Olympians, created as bedtime stories for his ADHD/dyslexic son. Former middle school teacher whose adult mystery Tres Navarre series won Edgar, Anthony & Shamus awards. Lives in Boston with wife Becky & sons Haley & Patrick.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Brandon Mull -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="./assets/Brandon_Mull.jpg" alt="Brandon Mull" class="card-img" />
+                            <h3 class="Auth_Name">Brandon Mull</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3 class="Auth_Name">Brandon Mull</h3>
+                            <h4 class="Auth_Genre">Young Adult Fantasy</h4>
+                            <p class="Auth_Bio">Brandon Mull (b. 1974) is #1 NYT bestselling author of Fablehaven, Beyonders, Five Kingdoms & Candy Shop War. Former comedian/film marketer from California who debuted with Fablehaven (2006). Lives in Utah with wife & four children. Known for magical creatures & epic quests.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tom Clancy -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="./assets/Tom_Clancy.jpg" alt="Tom Clancy" class="card-img" />
+                            <h3 class="Auth_Name">Tom Clancy</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3 class="Auth_Name">Tom Clancy</h3>
+                            <h4 class="Auth_Genre">Techno-Thriller</h4>
+                            <p class="Auth_Bio">Tom Clancy (1947-2013) pioneered techno-thriller genre with The Hunt for Red October (1984). Former Maryland insurance broker whose Jack Ryan novels sold 100M+ copies. Films include Hunt for Red October & Patriot Games. Passionate military history buff.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <div class="Series">
+            <div class="Header">
+                <h1><i class="fas fa-list"></i> Series</h1>
+            </div>
+            <div class="series-cards">
+                <!-- Innkeeper Chronicles (Ilona Andrews) -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="./assets/Innkeeper.jpg" alt="Innkeeper Chronicles" class="card-img" />
+                            <h3 class="Series_Name">Innkeeper Chronicles</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3 class="Series_Name">Innkeeper Chronicles</h3>
+                            <h4 class="Series_Genre">Urban Fantasy / Sci-Fi</h4>
+                            <p class="Series_Bio">Dina Demille runs magical B&B Gertrude Hunt serving interstellar guests: aliens, vampires, werewolves. Her broom's a weapon, Shih Tzu Beast is a monster, inn defies physics. Neutral ground where cosmic threats clash.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Alpha and Omega (Patricia Briggs) -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="./assets/Alpha_Omega.jpg" alt="Alpha and Omega" class="card-img" />
+                            <h3 class="Series_Name">Alpha and Omega</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3 class="Series_Name">Alpha and Omega</h3>
+                            <h4 class="Series_Genre">Urban Fantasy</h4>
+                            <p class="Series_Bio">Companion to Mercy Thompson. Omega werewolf Anna Latham calms packs; mates Charles Cornick, enforcer son of werewolf Marrok. Face fae wars, rogue wolves, witchborn magic in Tri-Cities.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mercy Thompson (Patricia Briggs) -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="./assets/Mercy_Thompson2.jpg" alt="Mercy Thompson" class="card-img" />
+                            <h3 class="Series_Name">Mercy Thompson</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3 class="Series_Name">Mercy Thompson</h3>
+                            <h4 class="Series_Genre">Urban Fantasy</h4>
+                            <p class="Series_Bio">Coyote shifter/VW mechanic Mercy navigates werewolf politics, vampire courts, fae intrigue in Tri-Cities WA. Walker heritage makes her Triad with Alpha Adam, mage Samuel.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kate Daniels (Ilona Andrews) -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="./assets/Kate_Daniels.jpg" alt="Kate Daniels" class="card-img" />
+                            <h3 class="Series_Name">Kate Daniels</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3 class="Series_Name">Kate Daniels</h3>
+                            <h4 class="Series_Genre">Urban Fantasy</h4>
+                            <p class="Series_Bio">Mercenary Kate Daniels wields sword in magic-tech wave-ravaged Atlanta. Battles shapeshifters, necromancers, gods amid Pack politics, Beast Lord Curran romance.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Five Kingdoms (Brandon Mull) -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="./assets/Five_kingdoms.jpg" alt="Five Kingdoms" class="card-img" />
+                            <h3 class="Series_Name">Five Kingdoms</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3 class="Series_Name">Five Kingdoms</h3>
+                            <h4 class="Series_Genre">YA Fantasy Adventure</h4>
+                            <p class="Series_Bio">Kid Cole Randolph abducted to magical Outskirts. Sky Raiders loot floating castles beyond Brink of Five Kingdoms. Unites friends against looming battle for world control.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fablehaven (Brandon Mull) -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="./assets/Fablehaven.jpg" alt="Fablehaven" class="card-img" />
+                            <h3 class="Series_Name">Fablehaven</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3 class="Series_Name">Fablehaven</h3>
+                            <h4 class="Series_Genre">YA Fantasy</h4>
+                            <p class="Series_Bio">Siblings Kendra & Seth discover grandparents' preserve for magical creatures: fairies, witches, demons. Defend from Muriel witch, Society of the Evening Star.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Percy Jackson (Rick Riordan) -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="./assets/Percy_Jackson.jpg" alt="Percy Jackson" class="card-img" />
+                            <h3 class="Series_Name">Percy Jackson</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3 class="Series_Name">Percy Jackson & the Olympians</h3>
+                            <h4 class="Series_Genre">Mythological Fantasy</h4>
+                            <p class="Series_Bio">ADHD/dyslexic demigod Percy Jackson (Poseidon son) quests at Camp Half-Blood. Battles Titans, retrieves Zeus bolt, Luke betrayal. Modern Greek gods among us.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- The Kane Chronicles (Rick Riordan) -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="./assets/Kane_Chronicles.jpg" alt="Kane Chronicles" class="card-img" />
+                            <h3 class="Series_Name">The Kane Chronicles</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3 class="Series_Name">The Kane Chronicles</h3>
+                            <h4 class="Series_Genre">Egyptian Mythology Fantasy</h4>
+                            <p class="Series_Bio">Siblings Carter & Sadie Kane (Pharaoh descendants) unleash Egyptian gods/magic accidentally. Host gods, battle Set chaos god as magicians.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Jack Ryan (Tom Clancy) -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="./assets/Jack_Ryan.jpg" alt="Jack Ryan" class="card-img" />
+                            <h3 class="Series_Name">Jack Ryan</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3 class="Series_Name">Jack Ryan</h3>
+                            <h4 class="Series_Genre">Techno-Thriller</h4>
+                            <p class="Series_Bio">CIA analyst Jack Ryan uncovers Soviet defections, Red October submarine, terror plots. Wall Street trader to President fighting global threats.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- The Lunar Chronicles (Marissa Meyer) -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="./assets/Lunar_Chronicles.jpg" alt="The Lunar Chronicles" class="card-img" />
+                            <h3 class="Series_Name">The Lunar Chronicles</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3 class="Series_Name">The Lunar Chronicles</h3>
+                            <h4 class="Series_Genre">Sci-Fi Fairy Tale Retelling</h4>
+                            <p class="Series_Bio">Marissa Meyer's 4-book series retells Cinderella, Little Red Riding Hood, Rapunzel as cyborgs/androids in futuristic Earth vs. Lunar tyranny. Cinder (cyborg mechanic), Scarlet (Red Riding Hood pilot), Cress (hacker), Winter (princess) unite against Queen Levana.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+        <div class="Books">
+            <div class="Header">
+                <h1>Books</h1>
+            </div>
+
+            <div class="books-cards">
+
+                <!-- The Wizard's Butler (Nathan Lowell) -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="./assets/Wizards_Butler.jpg" alt="The Wizard's Butler" class="card-img" />
+                            <h3 class="Book_Name">The Wizard's Butler</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3 class="Book_Name">The Wizard's Butler</h3>
+                            <h4 class="Book_Genre">Urban Fantasy</h4>
+                            <p class="Book_Bio">Unemployed Tavistock Reeves becomes butler to reclusive wizard Grindletop. Discovers hidden magical underworld beneath modern London. Manages mansion, wards off magical threats, uncovers wizard's secrets. Cozy fantasy with fish-out-of-water humor & British charm by Nathan Lowell.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Spy vs. Spy (Antonio Prohías) -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="./assets/Spy_vs_Spy.png" alt="Spy vs. Spy" class="card-img" />
+                            <h3 class="Book_Name">Spy vs. Spy</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3 class="Book_Name">Spy vs. Spy</h3>
+                            <h4 class="Book_Genre">Wordless Comic Strip</h4>
+                            <p class="Book_Bio">MAD Magazine's iconic wordless strip by Antonio Prohías (1961-1981). Black Spy vs. White Spy wage endless comical espionage war with booby traps, gadgets, explosions. Beak-headed rivals in hats & suits - timeless slapstick rivalry. Collected in comic books.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trouble Shooter (Louis L'Amour) -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="./assets/Trouble_Shooter.jpg" alt="Trouble Shooter" class="card-img" />
+                            <h3 class="Book_Name">Trouble Shooter</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3 class="Book_Name">Trouble Shooter</h3>
+                            <h4 class="Book_Genre">Western</h4>
+                            <p class="Book_Bio">Louis L'Amour's 1987 novel. Drifter Hopalong Cassidy-style hero Valle Torres kills rancher Brink's son in self-defense. Hunted across New Mexico Territory, builds new life while evading vengeance. Classic L'Amour morality tale of frontier justice.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- That Time I Got Reincarnated as a Slime (Fuse) -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="./assets/Tensei_Slime.jpg" alt="That Time I Got Reincarnated as a Slime" class="card-img" />
+                            <h3 class="Book_Name">That Time I Got Reincarnated as a Slime</h3>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3 class="Book_Name">Tensei Shitara Slime Datta Ken</h3>
+                            <h4 class="Book_Genre">Isekai Fantasy Manga/LN</h4>
+                            <p class="Book_Bio">Salaryman Satoru Mikami reincarnates as slime Rimuru Tempest in fantasy world. Absorbs abilities, builds monster nation Tempest, allies dragons/demons. Peaceful nation-builder isekai juggernaut by Fuse. Manga, LN, hit anime (2018+).</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Timo Library</p>
+    </div>
+  </footer>
+</body>
+</html>

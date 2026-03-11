@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TM Library</title>
+    <link rel="stylesheet/less" type="text/css" href="./styles/styles.less" />
+    <link rel="stylesheet/less" type="text/css" href="./styles/style_cards.less" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
+
+    <script src="https://cdn.jsdelivr.net/npm/less" ></script>
+<!--     Fourm Feedback as Alert -->
+    <script>
+        function submitRecommendation(event) {
+            event.preventDefault();
+            
+            const formData = {
+                type: document.getElementById('type').value,
+                genre: document.getElementById('genre').value,
+                description: document.getElementById('description').value,
+                whyLove: document.getElementById('why-love').value
+            };
+            
+            alert('Thanks for your recommendation!\n\n' + 
+                    `${formData.type}: ${formData.genre}\n` + 
+                    `${formData.description.substring(0, 100)}...\n` + 
+                    `Why love it: ${formData.whyLove.substring(0, 100)}...`);
+            
+            event.target.reset();
+        }
+    </script>
+<!--     Toggle Menu V -->
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            const menuToggle = document.querySelector('.menu-toggle');
+            
+            navLinks.classList.toggle('open');
+            
+            const isOpen = navLinks.classList.contains('open');
+            menuToggle.setAttribute('aria-expanded', isOpen);
+            
+            menuToggle.innerHTML = isOpen ? '✕' : '☰';
+        }
+    </script>
+
+</head>
+<body>
+  <header>
+    <div class="container">
+        <nav>
+
+            <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="favorite.html">Favorite</a></li>
+                <li><a href="recommendations.html" class="active">Recommendations</a></li>
+            </ul>
+        </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+        <section class="recommendation-section">
+            <div class="container-Favs">
+                <div class="Header" id="recommendation">
+                    <h1>
+                        Submit a Recommendation
+                        <br>
+                        <h2>of your favorite Authors, Series, Books.</h2>
+                    </h1>
+                </div>
+                
+                <form class="recommendation-form" onsubmit="submitRecommendation(event)">
+                <div class="form-group">
+                    <label class="form-label" for="type">Type</label>
+                    <select id="type" class="form-select" required>
+                    <option value="">Select Author, Series, or Book</option>
+                    <option value="author">Author</option>
+                    <option value="series">Series</option>
+                    <option value="book">Book</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="genre">Genre</label>
+                    <input type="text" id="genre" class="form-input" placeholder="e.g., Urban Fantasy, Techno-Thriller" required />
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="description">Description</label>
+                    <textarea id="description" class="form-textarea" placeholder="Brief overview of the author/series/book..." required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label" for="why-love">Why You Love It</label>
+                    <textarea id="why-love" class="form-textarea" placeholder="What makes this special to you?" required></textarea>
+                </div>
+                
+                <button type="submit" class="form-submit">Submit Recommendation</button>
+                </form>
+            </div>
+        </section>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Timo Library</p>
+    </div>
+  </footer>
+</body>
+</html>

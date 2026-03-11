@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TM Library</title>
+    <link rel="stylesheet/less" type="text/css" href="./styles/styles.less" />
+    <link rel="stylesheet/less" type="text/css" href="./styles/style_cards.less" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
+
+    <script src="https://cdn.jsdelivr.net/npm/less" ></script>
+    <!--     Toggle Menu V -->
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            const menuToggle = document.querySelector('.menu-toggle');
+            
+            navLinks.classList.toggle('open');
+            
+            const isOpen = navLinks.classList.contains('open');
+            menuToggle.setAttribute('aria-expanded', isOpen);
+            
+            menuToggle.innerHTML = isOpen ? '✕' : '☰';
+        }
+    </script>
+</head>
+<body>
+  <header>
+    <div class="container">
+        <nav>
+
+            <button class="menu-toggle"
+                    aria-label="Toggle navigation"
+                    aria-expanded="false"
+                    onclick="toggleMenu()">
+                ☰
+            </button>
+
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="favorite.html">Favorite</a></li>
+                <li><a href="recommendations.html">Recommendations</a></li>
+            </ul>
+        </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+        <div class="Header">
+            <h1>Welcome to TM's Library</h1>
+        </div>
+        <div class="images">
+            <!-- flanking images -->
+            <img src="./assets/Mercury.jpg" alt="" class="flanking-image left" />
+            <img src="./assets/Athena.jpg" alt="" class="flanking-image right" />
+            
+            <!-- Dominant library image -->
+            <div class="image-container hero-card">
+                <img src="./assets/library2.png" alt="TM's Cozy Library" class="library-image hero-img" />
+            </div>
+        </div>
+
+
+        <div class="blurb">
+            Reading has been my lifelong joy—stories captivate me, pulling my focus from daily stress while my mind vividly paints each scene the author crafts. 
+            Because I cherish it so deeply, I've made reading my ultimate reward for completed tasks, boosting my productivity in ways nothing else can.
+        </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Timo Library</p>
+    </div>
+  </footer>
+</body>
+</html>

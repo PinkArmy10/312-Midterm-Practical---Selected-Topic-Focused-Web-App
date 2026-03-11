@@ -1,0 +1,219 @@
+@import "styles.less";
+
+/* ========== Front Page ========== */
+/* ---------- Hero Library Image ---------- */
+.images {
+  position: relative;
+  height: 70vh; /* Full screen dominance */
+  min-height: 500px;
+  margin: 2rem 0;
+  border-radius: 20px;
+  border: @golden solid 3px;
+}
+
+.image-container.hero-card {
+  margin: 20px auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 85%;
+  max-width: 900px;
+  height: 60vh;
+  max-height: 500px;
+  aspect-ratio: 16/10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid @golden;
+  border-radius: 16px;
+  padding: 2rem;
+  z-index: 2;
+}
+
+.library-image.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.flanking-image {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  border-radius: 25%;
+  border: 4px solid @golden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  z-index: 3;
+
+  &.left { top: 30%; right: 5%; }
+  &.right { top: 30%; left: 5%; }
+}
+
+/* Mobile scaling */
+@media (max-width: 768px) {
+    .images { height: 60vh; }
+    .image-container.hero-card { 
+        width: 95%; 
+        padding: 1rem;
+        border: hidden;
+    }
+}
+
+/* Hide flanking images */
+@media (max-width: 1150px) {
+  .flanking-image {
+    display: none !important;
+  }
+  
+  .image-container.hero-card {
+    width: 98%;
+    height: 50vh;
+    padding: 0.5rem;
+  }
+  
+  .library-image.hero-img {
+    border-radius: 12px;
+  }
+}
+
+
+/* ========== Favorites Page ========== */
+.container-Favs {
+  display: flex;
+  flex-direction: column;
+}
+
+.author-cards {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.series-cards {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.books-cards {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+/* ---------- Flip cards ---------- */
+.flip-card {
+  position: relative;
+  width: 280px;
+  height: 380px;
+  margin: 2rem;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(115, 29, 44, 0.3);
+  transition: all 0.4s ease;
+  
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(115, 29, 44, 0.4);
+  }
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.flip-card:hover .card-img {
+  transform: scale(1.05);
+}
+
+/* Text overlay on hover */
+.flip-card::before {
+  content: attr(data-title) "\A" attr(data-desc);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(115, 29, 44, 0.95), rgba(89, 87, 60, 0.95));
+  color: @light;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  box-sizing: border-box;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease;
+  text-align: center;
+  line-height: 1.4;
+  font-size: 0.9rem;
+  white-space: pre-line;
+  border-radius: 16px;
+}
+
+.flip-card:hover::before {
+  opacity: 1;
+  visibility: visible;
+}
+
+.flip-card-back {
+  border: none;
+  h4 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  p {
+    padding: 8px;
+    font-size: 15px;
+  }
+}
+
+.author-cards .flip-card:nth-child(odd) { 
+  margin-left: 1rem; 
+}
+
+.flip-card:not(:hover) .card-img {
+  filter: brightness(0.9);
+}
+
+.series-cards > :first-child {
+  border-top-left-radius: 30px;
+}
+
+.books-cards > :last-child {
+  border-bottom-right-radius: 30px;
+}
+
+/* ---------- Responsive Grid ---------- */
+.author-cards,
+.series-cards,
+.books-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+  padding: 0 1rem;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .author-cards,
+  .series-cards,
+  .books-cards {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}

@@ -1,0 +1,359 @@
+/* ---------- Cozy Library palette ---------- */
+@burgundy:    #731D2C; // main accent (buttons, links, headings)
+@olive-brown: #59573C; // secondary (nav, borders)
+@golden:      #D99748; // highlights (hover, callouts)
+@deep-brown:  #401801; // header/footer background
+@rust:        #8C471F; // secondary accent (badges, small details)
+
+/* ---------- Global Styles ---------- */
+@primary: @burgundy;
+@secondary: @olive-brown;
+@light: #F7F3EA;
+@dark: @deep-brown;
+@accent: @golden;
+@sec-accent: @rust;
+
+
+/* ---------- Navigation ---------- */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: @primary;
+  color: @sec-accent;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  z-index: 10;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: @accent;
+  font-size: 1.25rem;
+  
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+nav a.active {
+  font-weight: bold;
+  color: @golden;
+  text-decoration: none;
+  text-shadow: 0 0 8px rgba(217, 151, 72, 0.5);
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.menu-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: @accent;
+}
+
+/* Mobile Behavior */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: @primary;
+    flex-direction: column;
+    gap: 0;
+    width: fit-content;
+    padding: 1rem;
+    margin: 0;
+    display: none;
+    border: #333 solid 1px;
+    border-top: none; 
+    border-radius: 0 0 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+  
+  .nav-links.open {
+    display: flex;
+  }
+  
+  .nav-links li {
+    margin-bottom: 0.5rem;
+    width: 100%;
+  }
+  
+  .nav-links a {
+    display: block;
+    padding: 0.75rem 1rem;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+
+
+
+// I got this from https://fontsource.org/fonts/dancing-script/cdn and, Perplexity AI fixed it for my use.
+
+/* ---------- Fonts ---------- */ 
+/* Dancing Script (elegant titles) */
+@font-face {
+  font-family: 'Dancing Script Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400 700;
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/dancing-script:vf@latest/latin-wght-normal.woff2) format('woff2-variations');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+/* Existing Georgia set as fallback */
+@heading-font: 'Dancing Script Variable', 'Georgia', serif;
+@body-font: 'Georgia', serif;
+
+/* ---------- Header ---------- */
+.Header {
+  background: linear-gradient(135deg, @primary, @rust);
+  color: @light;
+  text-align: center;
+  padding: 2.5rem 1rem;
+  font-family: @heading-font;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+  
+  h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    margin: 0;
+  }
+}
+
+/* Hero title */
+div.Header h1 {
+  font-family: @heading-font;
+  font-weight: 700;
+}
+
+/* Flip card names */
+.Auth_Name, .Series_Name, .Book_Name {
+  font-family: @heading-font;
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+
+
+
+
+
+/* ---------- Main Content ---------- */
+body {
+  padding-top: 80px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: @light;
+  color: @dark;
+  font-family: 'Georgia', serif;
+}
+
+body:has(.active) nav {
+  box-shadow: 0 4px 12px rgba(115, 29, 44, 0.3);
+}
+
+.blurb {
+  max-width: 700px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: linear-gradient(135deg, @secondary, darken(@secondary, 10%));
+  color: @light;
+  border-radius: 16px;
+  box-shadow: 0 12px 36px rgba(115, 29, 44, 0.3);
+  font-family: 'Georgia', serif;
+  font-style: italic;
+  text-align: center;
+  line-height: 1.7;
+  font-size: 1.1rem;
+  
+  @media (max-width: 768px) {
+    margin: 2rem 1rem;
+    padding: 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .card {
+    flex: 0 1 200px;
+    max-width: 200px;
+    margin-bottom: 1em;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .card {
+    flex: 0 1 calc(45% - 0.1em);
+    margin-bottom: 1em;
+  }
+  .masthead {
+    height: 125px;
+    padding-top: 10px;
+    font-size: large;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .cards {
+    margin-top: inherit;
+  }
+}
+
+/* ---------- Recommendations ---------- */
+.recommendation-form {
+  background: linear-gradient(135deg, @light 0%, lighten(@light, 5%) 100%);
+  border: 3px solid @golden;
+  border-radius: 20px;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 600px;
+  box-shadow: 0 12px 36px rgba(115, 29, 44, 0.2);
+  font-family: 'Georgia', serif;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  display: block;
+  color: @dark;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.form-select,
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid @olive-brown;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-family: 'Georgia', serif;
+  background: white;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.form-select:focus,
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: @burgundy;
+  box-shadow: 0 0 0 3px rgba(115, 29, 44, 0.1);
+}
+
+.form-textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.form-submit {
+  background: linear-gradient(135deg, @burgundy, @rust);
+  color: @light;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(115, 29, 44, 0.4);
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .recommendation-form {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+}
+
+/* ---------- Flip Card ---------- */
+.flip-card {
+  background-color: transparent;
+  width: 200px;
+  height: 300px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: @accent;
+  color: @dark;
+}
+
+.flip-card-back {
+  background-color: @accent;
+  border: 5px solid darken(@accent, 20%);
+  color: @dark;
+  transform: rotateY(180deg);
+}
+
+/* ---------- Footer ---------- */
+footer {
+  background-color: @dark;
+  color: @light;
+  text-align: center;
+  padding: 1rem;
+  margin-top: auto;
+}
+
